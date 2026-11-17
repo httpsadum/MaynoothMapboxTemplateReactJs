@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# Maynooth Campus Map – React & Mapbox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive campus mapping project built with **React.js** and **Mapbox GL JS**, designed around Maynooth University.
 
-## Available Scripts
+The project provides a foundation for a campus navigation application, combining an interactive map interface with the potential to expand into location discovery, outdoor navigation and indoor building navigation.
 
-In the project directory, you can run:
+**Repository:** [MaynoothMapboxTemplateReactJs](https://github.com/httpsadum/MaynoothMapboxTemplateReactJs)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive Mapbox map** – Displays an interactive map centred around Maynooth University.
+- **React.js frontend** – Component-based application structure.
+- **Map controls** – Mapbox navigation controls for zooming and map interaction.
+- **Location sidebar** – Interface for displaying and organising campus locations.
+- **Environment-based configuration** – Mapbox access token configured through environment variables.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technology Stack
 
-### `npm test`
+| Technology | Purpose |
+|---|---|
+| React.js | Frontend application |
+| JavaScript | Application logic |
+| Mapbox GL JS | Interactive mapping |
+| HTML5 & CSS3 | Layout and styling |
+| Node.js & npm | Development environment |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install the following before running the project:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- A [Mapbox account](https://account.mapbox.com/) and public access token
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/httpsadum/MaynoothMapboxTemplateReactJs.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Navigate into the project:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd MaynoothMapboxTemplateReactJs
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Configure Mapbox
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env` file in the project root directory, alongside `package.json`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add your Mapbox public access token:
 
-### Code Splitting
+```env
+REACT_APP_MAPBOX_TOKEN=your_mapbox_public_token
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Replace `your_mapbox_public_token` with your own token from your Mapbox account.
 
-### Analyzing the Bundle Size
+**Important:** Do not commit your `.env` file or expose secret access tokens in your repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Start the development server
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open the application at:
 
-### Advanced Configuration
+```text
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The development server automatically reloads when changes are made to the source code.
 
-### Deployment
+## Building for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To generate an optimised production build:
 
-### `npm run build` fails to minify
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The resulting application is generated in the `build` directory and can be deployed to a suitable static hosting provider.
+
+## Project Structure
+
+```text
+MaynoothMapboxTemplateReactJs/
+│
+├── public/
+│   ├── index.html
+│   └── ...
+│
+├── src/
+│   ├── App.jsx
+│   ├── Map.js
+│   ├── sidebar.css
+│   └── ...
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+*The source file names above describe the current application structure; adjust them if the project changes.*
+
+## Future Development
+
+Potential extensions for the project include:
+
+- Campus building and facility markers.
+- Searchable campus locations.
+- GPS-based user positioning.
+- Outdoor walking navigation.
+- Indoor building maps and floor selection.
+- Indoor route calculation.
+- Responsive mobile interface and Android support.
+
+These are planned extensions rather than claims about currently implemented functionality.
+
+## Author
+
+**Adam Bennett**
+
+GitHub: [@httpsadum](https://github.com/httpsadum)
+
+Developed as a React and Mapbox campus mapping project focused on exploring interactive mapping, frontend development and location-based applications.
+
+---
+
+*Map data and mapping services are provided through Mapbox. A valid Mapbox access token is required to run the application.*
